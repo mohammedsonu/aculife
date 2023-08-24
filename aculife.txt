@@ -1,0 +1,865 @@
+htmlform:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">REGISTRATION</h1>
+    <form>
+        Name:<input type="text" maxlength="5" id="name"><br><br>
+        Email Address:<input type="email" id="email"><br><br>
+        Password:<input type="password" id="ps"><br><br>
+        Gender:<br>
+        Male:<input type="radio" name="Gender" value="Male" checked id="Male"><br>
+        Female:<input type="radio" name="Gender" value="Female" id="Female"><br>
+        Other:<input type="radio" name="Gender" value="Other" id="Other"><br>
+        Hobbies:<br>
+        Singing:<input type="checkbox" name="hobby" value="Singing" id="hobby1"><br>
+        Dancing:<input type="checkbox" name="hobby" value="Dancing" id="hobby2"><br>
+        Cricket:<input type="checkbox" name="hobby" value="Cricket" id="hobby3"><br>
+        Chess:<input type="checkbox" name="hobby" value="Chess" id="hobby4"><br>
+        Country:<br>
+        <select id="Country">
+            <option name="Country" value="india" id="ind">India</option>
+            <option name="Country" value="pakistan" id="pak">pakistan</option>
+            <option name="Country" value="iran" id="iran">iran</option>
+        </select>
+        <input type="file">
+        <input type="date">
+        <input type="submit" onclick="done()">
+        <input type="reset">
+    </form>
+    <script>
+        function done() {
+
+            var e_name = document.getElementById("name").value;
+            var e_email = document.getElementById("email").value;
+            var e_pass = document.getElementById("ps").value;
+            var e_gender;
+            var i;
+            const e_hobby = [5];
+            var e_country;
+            if (document.getElementById("Male").checked) {
+                e_gender = "Male";
+            }
+            if (document.getElementById("Female").checked) {
+                e_gender = "Female";
+            }
+            if (document.getElementById("Other").checked) {
+                e_gender = "Other";
+            }
+            if (document.getElementById("hobby1").checked) {
+                e_hobby.push("hobby1");
+            }
+            if (document.getElementById("hobby2").checked) {
+                e_hobby.push("hobby2");
+            }
+            if (document.getElementById("hobby3").checked) {
+                e_hobby.push("hobby3");
+            }
+            if (document.getElementById("hobby4").checked) {
+                e_hobby.push("hobby4");
+            }
+            e_country = document.getElementById("Country").value;
+            document.write(e_name);
+            document.write("<br>");
+            document.write(e_email);
+            document.write("<br>");
+            document.write(e_pass);
+            document.write("<br>");
+            document.write(e_gender);
+            document.write("<br>");
+            document.write(e_country);
+            document.write("<br>");
+            for (i = 0; i <= e_hobby.length; i++) {
+                document.write(e_hobby[i]);
+                document.write("<br>");
+            }
+        }
+    </script>
+</body>
+
+</html>
+--------------------------------------------------------
+bgchange
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body background="C:/Users/moham/Desktop/IMG_5194.jpeg" id="bgimg">
+    <button onclick="changeme()">click me </button>
+    <script>
+        function changeme() {
+            document.body.style.backgroundImage = "url('C:/Users/moham/Desktop/IMG_5254.JPG')";
+        }
+    </script>
+</body>
+
+</html>
+-------------------------------------------------
+email validator:
+<body>
+<h3 style="text-align: center;">enter email</h3>
+<label for="email">enter email</label>
+<input type="text" id="emails" name="emails">
+<button onclick="check()">check</button>
+<script> function check() { var sam = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zAZ0-9-]+(?:\.[a-zA-Z0-9-]+)*$/; var got = document.getElementById("emails").value;
+document.write("<br>"); document.writeln("the entered email is \n")
+document.write(got + "\n"); if (got.match(sam)) {
+document.write("correct\n");
+} else
+-----------------------------------------------
+js date
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="nowdate">Date will be displayed here</h1>
+    <h1 id="nowtime">time will be displayed here</h1>
+    <h1 id="nowmonth">month will be displayed here</h1>
+    <button onclick="change()">change</button>
+    <script>
+        function change() {
+            var date = new Date();
+            document.getElementById("nowdate").innerHTML = date.getDate();
+            document.getElementById("nowtime").innerHTML = date.getHours() + " " + date.getMinutes() + " " + date.getSeconds();
+            document.getElementById("nowmonth").innerHTML = date.getMonth();
+        }
+    </script>
+</body>
+
+</html>
+-----------------------------------------------
+calculator:
+
+<body>
+    <input type="text" id="scr">
+    <button onclick="getdata('1')" id="bt1">1</button>
+    <button onclick="getdata('2')" id="bt1">2</button>
+    <button onclick="getdata('3')" id="bt1">3</button>
+    <button onclick="getdata('4')" id="bt1">4</button>
+    <button onclick="getdata('5')" id="bt1">5</button>
+    <button onclick="getdata('+')" id="bt1">+</button>
+    <button onclick="getdata('*')" id="bt1">*</button>
+    <button onclick="answer()">=</button>
+    <script>
+        function getdata(value) {
+            document.getElementById("scr").value += value;
+        }
+        function answer() {
+            var exp = document.getElementById("scr").value;
+            var sum = eval(exp);
+            document.getElementById("scr").value = sum;
+        }
+    </script>
+---------------------------------------------
+dynamic_table
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table id="tb">
+        <th>name</th>
+        <th>age</th>
+    </table>
+    <button onclick="insert()">insert</button>
+    <button onclick="del()">delete</button>
+    <script>
+        var t = document.getElementById("tb");
+        function insert() {
+            var row = t.insertRow(1);
+            var x = row.insertCell(0);
+            var y = row.insertCell(1);
+            x.innerHTML = window.prompt("enter name");
+            y.innerHTML = window.prompt("enter age");
+        }
+        function del() {
+            t.deleteRow(1);
+        }
+    </script>
+</body>
+
+</html>
+-------------------------------------------------
+image_pos:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="C:\Users\moham\Downloads\YT CHANNEL.jpg" height="100" width="100" id="photo">
+    <script>
+        function done() {
+            var a = window.prompt("enter x cordinates");
+            var b = window.prompt("enter y cordinates");
+            var i = document.getElementById("photo");
+            i.style.position = "absolute";
+            i.style.left = a + "px";
+            i.style.top = b + "px";
+            document.body.appendChild(i);
+        }
+        done();
+    </script>
+
+</body>
+
+</html>
+---------------------------------------
+mouse_co
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="xpos"></h1>
+    <h1 id="ypos"></h1>
+    <img src="C:\Users\moham\Desktop\IMG_5194.jpeg" width="100" height="100" id="photo">
+    <button onclick="take()">click me</button>
+    <script>
+        document.addEventListener("mousemove", showco)
+        function showco(event) {
+            var a = event.clientX;
+            var b = event.clientY;
+            document.getElementById("xpos").innerHTML = a;
+            document.getElementById("ypos").innerHTML = b;
+        }
+        function take() {
+            var ph = document.getElementById("photo");
+            var p = window.prompt("enter x pos");
+            var q = window.prompt("enter y pos");
+            ph.style.position = "absolute";
+            ph.style.left = p + "px";
+            ph.style.top = q + "px";
+            document.body.appendChild(ph);
+        }
+    </script>
+
+</body>
+
+</html>
+-------------------------------------------
+move_img:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #photo {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transition: 20;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="C:\Users\moham\Desktop\IMG_5194.jpeg" width="100" height="100" id="photo">
+    <script>
+        function take() {
+            var ph = document.getElementById("photo");
+            var cur = parseInt(ph.style.left) || 0;
+            var newpos = cur + 2;
+            ph.style.left = newpos + "px";
+            setTimeout(take, 50);
+        }
+        take();
+    </script>
+
+</body>
+
+</html>
+------------------------------------------
+mul_table:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        tr,
+        td,
+        th {
+            border: 2px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <table id="mul">
+
+    </table>
+    <script>
+        function printdata() {
+            var a = parseInt(window.prompt("enter a value"));
+            var b = parseInt(window.prompt("enter a value"));
+            var t = ""
+            for (let i = 1; i <= a; i++) {
+                for (let j = 1; j <= b; j++) {
+                    t += "<td>" + i * j + "</td>";
+                }
+                t += "</tr>";
+            }
+            document.getElementById("mul").innerHTML = t;
+        }
+        printdata();
+    </script>
+</body>
+
+</html>
+---------------------------------
+bootstrap:
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <div>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">CSE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">ECE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">EEE</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">MECH</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container p-3 my-5">
+        <div class="row ">
+            <div class="col text-bg-primary p-3 ">
+                <div class="text-warning">
+                    COMPUTER SCIENCE IN ENGINEERING
+                </div>
+                <div>
+                    The Computer Science and Engineering (CSE) department is a vibrant academic unit focused on
+                    the study and application of computer science principles and technologies.
+                    The CSE department offers a comprehensive curriculum that covers a wide range of subjects, including
+                    programming, algorithms, data structures, artificial intelligence, computer networks, and software
+                    engineering.
+                </div>
+            </div>
+            <div class="col text-bg-secondary p-3 ">
+                <div class="text-primary">
+                    Electronics and Communication Engineering (ECE)
+                </div>
+                <div>
+                    The ECE department offers a comprehensive curriculum that encompasses subjects like digital
+                    electronics, signal processing, microelectronics, wireless communication, and embedded systems.
+                    Students in the ECE department acquire a strong foundation in theoretical concepts while gaining
+                    practical experience through laboratory experiments, projects, and industry internships.
+
+                </div>
+            </div>
+            <div class="col text-bg-dark p-3">
+                <div class="text-danger">
+                    Electrical and Electronics Engineering (EEE)
+                </div>
+                <div>
+                    The Electrical and Electronics Engineering (EEE) department is a dynamic academic unit
+                    dedicated to the study and application of electrical systems, power generation, electronics, and
+                    related
+                    technologies.
+                    The EEE department offers a comprehensive curriculum that covers subjects such as circuit theory,
+                    power
+                    systems, control systems, digital electronics, renewable energy, and electrical machines.
+                </div>
+            </div>
+            <div class="col text-bg-success p-3">
+                <div class="text-dark">
+                    Mechanical Engineering (Mech)
+                </div>
+                <div>
+                    The Mechanical Engineering (Mech) department is a vibrant academic division focused on the
+                    study and application of principles related to mechanics, thermodynamics, materials science, and
+                    manufacturing processes.
+                    The Mech department offers a comprehensive curriculum that covers subjects such as engineering
+                    mechanics,
+                    fluid mechanics, heat transfer, machine design, robotics, and manufacturing technology.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+------------------------------------------------
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple jQuery Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #3498db;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Simple jQuery Effects Demo</h1>
+
+    <button id="fadeIn">Fade In</button>
+    <button id="fadeOut">Fade Out</button>
+    <button id="slideUp">Slide Up</button>
+    <button id="slideDown">Slide Down</button>
+    <button id="toggle">Toggle</button>
+
+    <div class="box"></div>
+
+    <script>
+        $(document).ready(function () {
+            $("#fadeIn").click(function () {
+                $(".box").fadeIn();
+            });
+
+            $('#fadeOut').click(
+                function () {
+                    $(".box").fadeOut();
+                }
+            )
+        });
+    </script>
+</body>
+
+</html>
+-----------------------------------
+form class:
+form.py
+from django import forms
+class Studentform(forms.Form):
+    roll = forms.IntegerField()
+    name = forms.CharField(max_length=20)
+00
+from django.shortcuts import render, HttpResponse
+from formclass_a import forms
+def student_data(request):
+    form = forms.Studentform()
+    if request.method == 'POST':
+        form = forms.Studentform(request.POST)
+        if form.is_valid():
+            print("Form is valid")
+            print("The roll number is", form.cleaned_data['roll'])
+            print("The name is", form.cleaned_data['name'])
+
+    return render(request, 'index.html', {'form': form})
+# Create your views here.
+00
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">form</h1>
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <input type="submit" value="send">
+    </form>
+</body>
+
+</html>
+-----------------------------------------------
+greeting:
+from django.shortcuts import render, HttpResponse
+import datetime
+
+
+def temp(request):
+    x = datetime.datetime.now()
+    cur_time = x.hour
+    msg = ""
+    if cur_time < 12:
+        msg += "good morning"
+    elif cur_time < 16:
+        msg += "good afternoon"
+    else:
+        msg += "good night"
+    msg += "the time is "+str(x)
+    dict = {"greetings": msg}
+
+    return render(request, "hello.html", dict)
+# Create your views here.
+00
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> HELLO JI I AM FROM TEMPLATES TO GREET YOU</h1>
+    <h1>{{ greetings }}</h1>
+</body>
+
+</html>
+----------------------------------------------
+modelform:
+admin:
+from django.contrib import admin
+from modelform_a.models import *
+
+
+class studentView(admin.ModelAdmin):
+    list_display = ["roll", "name", "marks"]
+
+
+admin.site.register(student, studentView)
+
+# Register your models here.
+model.py:
+from django.db import models
+
+
+class student(models.Model):
+    roll = models.IntegerField()
+    name = models.TextField()
+    marks = models.IntegerField()
+
+# Create your models here.
+00
+view:
+from django.shortcuts import render
+from .models import *
+
+
+def Student_Fun(request):
+    stdata = student.objects.all()
+    return render(request, 'index.html', {'stlist': stdata})
+# Create your views here.
+00
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="2">
+        <thead>
+            <th>roll</th>
+            <th>name</th>
+            <th>mark</th>
+        </thead>
+        {% for s in stlist%}
+        <tr>
+            <td>{{s.roll}}</td>
+            <td>{{s.name}}</td>
+            <td>{{s.mark}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
+-------------------------------------
+sessions:
+from django.shortcuts import render, HttpResponse
+
+
+def set_session(request):
+    request.session['username'] = "sonu"
+    return HttpResponse('Session variable set')
+
+
+def get_session(request):
+    username = request.session.get('username')
+    return HttpResponse(f'Username: {username}')
+
+
+def set_cookie(request):
+    response = HttpResponse('Cookie is set')
+    response.set_cookie('color', 'black')
+    return response
+
+
+def get_cookie(request):
+    color = request.COOKIES.get('color')
+    return HttpResponse(f'Color:{color}')
+# Create your views here.
+--------------------------------------------
+CRUD:
+in views.py file:
+from django.shortcuts import render,redirect
+from django.http import *
+from .forms import *
+from .models import Student
+def display(request):
+ if request.method=="POST":
+ form=StudentForm(request.POST)
+ if form.is_valid():
+ form.save()
+ return redirect("/displaystudent")
+ else:
+ form=StudentForm()
+ students = Student.objects.all()
+ return render(request,'studentdisplay.html',{"form":students})
+def insert(request):
+ form=StudentForm()
+ return render(request,"studentinsert.html",{"form":form})
+def edit(request,sid):
+student=Student.objects.get(sid=sid)
+ return render(request,"edit.html",{"form":student})
+def update(request,sid):
+ student=Student.objects.get(sid=sid)
+ if request.method=="POST":
+ form=StudentForm(request.POST,instance=student)
+ if form.is_valid():
+ form.save()
+ return redirect("/displaystudent")
+ else:
+ form=StudentForm(instance=student)
+ return render(request,"edit.html",{"form":form})
+def delete(request,sid):
+ student=Student.objects.get(sid=sid)
+ student.delete()
+ return redirect("/displaystudent")
+in urls.py:
+from django.contrib import admin
+from django.urls import path
+from crudapp.views import *
+urlpatterns = [
+ path('admin/', admin.site.urls),
+ path('displaystudent',display),
+ path('studentinsert',insert),
+ path('studentedit/<str:sid>/',edit),
+ path('studentdelete/<str:sid>/',delete),
+ path('update/<str:sid>/',update),]
+IN forms.py:
+from django import forms
+from .models import *
+class StudentForm(forms.ModelForm):
+ class Meta:
+ model=Student
+ fields="__all__"
+In models.py:
+from django.db import models
+class Student(models.Model):
+ sid=models.CharField(max_length=20)
+ name=models.CharField(max_length=20)
+ email=models.EmailField()
+ class Meta:
+ db_table="student"
+In admin.py:
+from django.contrib import admin
+from .models import *
+# Register your models here.
+class StView(admin.ModelAdmin):
+ list_display=["sid","name","email"]
+admin.site.register(Student,StView)
+studentdisplay.html
+<html>
+ <body>
+ <table border="1">
+ <tr>
+ <th>student id</th>
+ <th>student name</th>
+ <th>student mail</th>
+ <th>actions</th>
+ </tr>
+ {% for st in form %}
+<tr>
+ <td>{{st.sid}}</td>
+ <td>{{st.name}}</td>
+ <td>{{st.email}}</td>
+ <td><a href="/studentedit/{{st.sid}}">update</a>
+ <a href="/studentdelete/{{st.sid}}">delete</a></td>
+ </tr>
+ {% endfor %}
+ </table>
+ <br/><a href="/studentinsert">add new record</a>
+ </body>
+</html>
+studentinsert.html
+<html>
+ <body>
+ <form method="post" action="/displaystudent">
+ {% csrf_token %}
+ <label>id:</label>{{form.sid}}<br>
+ <label>name:</label>{{form.name}}<br>
+ <label>email:</label>{{form.email}}<br>
+ <button type="submit">submit</button>
+ </form>
+ </body>
+</html>
+edit.html
+<!DOCTYPE html>
+<body>
+ <form method="POST" action="/update/{{ form.sid }}/">
+ {% csrf_token %}
+ <h3>Update Details</h3> 
+<label for="id_eid">Student Id:</label>
+ <input type="text" name="sid" id="id_eid" required maxlength="20" value="{{ form.sid }}"/>
+ <br/>
+ <label for="id_ename">Student Name:</label>
+ <input type="text" name="name" id="id_ename" required maxlength="100" value="{{ form.name }}"
+/>
+ <br/>
+ <label for="id_eemail">Student Email:</label>
+ <input type="email" name="email" id="id_eemail" required maxlength="254" value="{{ form.email
+}}" />
+ <br/>
+ <button type="submit">Update</button>
+ </form>
+</body>
+</html>
+COMANDS TO MAKE MIGRATIONS(IN CMD)
+python manage.py makemigrations
+python manage.py migrate
+Commands to create superuser:
+python manage.py createsuperuser
+username:<enter your name>
+password:<give your password>
+---------------------------
+
+XML SCHEMA:
+XML File :
+<?xml version="1.0" encoding="UTF-8"?>
+<banking_details xsi:noNamespaceSchemaLocation="bank.xsd"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<bank> 
+<name>Andhra bank</name>
+<branch>godavarikhani</branch>
+</bank>
+<customer>
+<accNo>64598954986465</accNo>
+<accType>savings</accType>
+<cName>sonu</cName>
+<phone>1234984233</phone>
+<address>
+<city>godavarikhani</city>
+<state>telangana</state>
+</address>
+<address>
+<city>hyderabad</city>
+<state>telangana</state>
+</address>
+</customer>
+</banking_details> XSD
+File :
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="banking_details">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="bank"> 
+<xs:complexType>
+<xs:sequence>
+<xs:element name="name" type="xs:string" />
+<xs:element name="branch" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+<xs:element name="customer" minOccurs="0" maxOccurs="unbounded">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="accNo" type="xs:unsignedLong" />
+<xs:element name="accType" type="xs:string" />
+<xs:element name="cName" type="xs:string" />
+<xs:element name="phone" type="xs:unsignedInt" />
+<xs:element name="address" minOccurs="1" maxOccurs="2">
+<xs:complexType>
+<xs:sequence>
+<xs:element name="city" type="xs:string" />
+<xs:element name="state" type="xs:string" />
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:sequence>
+</xs:complexType>
+</xs:element> 
+</xs:sequence>
+</xs:complexType>
+</xs:element>
+</xs:schema> 
+------------------------------
+DTD:
+<?xml version="1.0"?>
+<note>
+    <fam>
+        <younger>
+            <brother>sonu</brother>
+            <sister>neha</sister>
+        </younger>
+        <elder>
+            <dad>mazher</dad>
+            <mom>zaheda</mom>
+        </elder>
+    </fam>
+    <body>hello</body>
+</note>
+<!DOCTYPE note[
+<!ELEMENT note (fam, body)>
+<!ELEMENT fam (younger, elder)>
+<!ELEMENT younger (brother, sister)>
+<!ELEMENT elder (dad, mom)>
+<!ELEMENT brother (#PCDATA)>
+<!ELEMENT sister (#PCDATA)>
+<!ELEMENT dad (#PCDATA)>
+<!ELEMENT mom (#PCDATA)>
+<!ELEMENT body (#PCDATA)>
+]>
+
